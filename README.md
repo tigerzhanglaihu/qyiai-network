@@ -15,13 +15,15 @@ curl -sSL https://ollama.dev/install.sh | sh
 iwr -useb https://ollama.dev/install.ps1 | iex
 ```
 
-### 2. 推送相关模型
-安装完成后，您需要将相关的模型推送到 Ollama：
+### 2. 配置通义千问的地址与模型名称在 `config.ini` 中
+确保地址与模型已经在 `config.ini` 文件中正确配置。这里以qwen-turbo为例
 
 ```sh
-# 使用以下命令将模型推送到 Ollama
-# 比如qwen2
-ollama push qwen2 
+#api的地址，根据阿里云的说法，openAI与阿里云通用
+LLM_NETWORK_URL = https://dashscope.aliyuncs.com/compatible-mode/v1
+
+#ollma 模型名称
+LLM_OLLAMA_MODEL = qwen-turbo
 ```
 
 ### 3. Key对应关系在 `config.ini` 中
